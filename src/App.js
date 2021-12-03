@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import styled from 'styled-components';
+import NavBar from "./components/NavBar/NavBar";
+import Produtos from "./components/Produtos/produtos";
+import Carrinho from "./components/Carrinho/carrinho";
+import Filtros from './components/Filtros/filtros';
 
-function App() {
+
+const App = () => {
+
+  const [cart, setCart] = useState([]);
+
+  function addItemCarrinho(url, name, preco) {
+    const itemObjeto = {url, name, preco};
+    setCart([...cart, itemObjeto]);
+  }
+
+  function removerItem(itemIndex){
+    const filtrar = cart.filter( cartItem => cart.indexOf(cartItem) !== itemIndex );
+    setCart(filtrar);
+    console.log(itemIndex)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar cart={cart} />
+      <Produtos addItemCarrinho={addItemCarrinho} />
+      <Filtros />
+      <Carrinho cart={cart} removerItem={removerItem}/>
     </div>
   );
-}
+};
 
 export default App;
