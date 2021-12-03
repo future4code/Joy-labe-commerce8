@@ -5,7 +5,7 @@ const Itens = ({ name, preco, itemIndex, removerItem }) => {
         <li>
             <h2>{name}</h2>
             <span>R$ {preco}</span>
-            <button className="botão-remover" onclick={() => removerItem(itemIndex)}>REMOVER</button>
+            <button className="botão-remover" onClick={() => removerItem(itemIndex)}>REMOVER</button>
           </li>
     )
 }

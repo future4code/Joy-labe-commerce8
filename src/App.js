@@ -22,10 +22,14 @@ const App = () => {
     console.log(itemIndex)
   }
 
+  function limparCarrinho (){
+    setCart([])
+  }
+
 
   return (
     <div className="App">
-      <NavBar cart={cart} />
+      <NavBar cart={cart} limparCarrinho={limparCarrinho}/>
       <Produtos addItemCarrinho={addItemCarrinho} />
       <Filtros />
       <Carrinho cart={cart} removerItem={removerItem}/>

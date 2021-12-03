@@ -2,22 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 
-const Cabecalho = styled.header`
-width: 100vw;
-height: 15vh;
-background: #f8f7f7;
-display: flex;
-align-itens: center;
-justify-content: center;
-`
 
-const Resumo = styled.nav`
-width: 90%;
-max-width: 900px;
-display: flex;
-align-itens:center;
-justify-content: space-between;
-`
 
 const NavBar = ({ cart }) => {
     
@@ -25,9 +10,9 @@ const NavBar = ({ cart }) => {
       
 
     return (
-        <Cabecalho>
+        
         <header>
-        <Resumo>    
+            
         <nav>
           <h2 className="logo">PRODUTOS</h2>
           <div className="nav-bar-resumo">
@@ -38,9 +23,9 @@ const NavBar = ({ cart }) => {
             <button className="botao-nav">Limpar</button>
           </div>
         </nav>
-        </Resumo> 
+        
       </header>
-      </Cabecalho>
+      
     )
 }
 
