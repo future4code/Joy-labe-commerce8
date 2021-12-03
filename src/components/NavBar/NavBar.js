@@ -19,7 +19,7 @@ align-itens:center;
 justify-content: space-between;
 `
 
-const NavBar = ({ cart }) => {
+const NavBar = ({ cart, limparCarrinho }) => {
     
      const soma = cart.reduce((acc, current) => acc + current.preco, 0)
       
@@ -35,7 +35,7 @@ const NavBar = ({ cart }) => {
             <span>{cart.length} {cart.length === 1 ? "Produto" : "Produtos"}</span>
             <span className="nav-bar-valor-total">R$ {soma}</span>
             </div>
-            <button className="botao-nav">Limpar</button>
+            <button className="botao-nav" onClick={() => limparCarrinho()} >Limpar</button>
           </div>
         </nav>
         </Resumo> 
