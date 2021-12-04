@@ -91,10 +91,10 @@ main{
 .produtos-lista{
   max-width: 900px;
   width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5rem;
+  gap: 5rem;
   padding-bottom: 3rem;
 }
 

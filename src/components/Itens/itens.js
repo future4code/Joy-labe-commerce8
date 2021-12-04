@@ -4,7 +4,7 @@ const Itens = ({ name, preco, itemIndex, removerItem }) => {
     return(
         <li>
             <h2>{name}</h2>
-            <span>R$ {preco}</span>
+            <span>Ð {preco}</span>
             <button className="botão-remover" onClick={() => removerItem(itemIndex)}>REMOVER</button>
           </li>
     )
